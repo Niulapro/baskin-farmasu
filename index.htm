@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacked By Niula85</title>
+    <link href="css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff0000;
+            --glow: rgba(255, 0, 0, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: crosshair;
+        }
+
+        /* 
+           KRİTİK DÜZELTME:
+           body'deki siyah arka planı alta aldık. 
+           Videoyu ve yazıları "z-index" ile sıralayacağız ki video kaybolmasın.
+        */
+        body, html {
+            height: 100%;
+            width: 100%;
+            background-color: #000;
+            overflow: hidden;
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+        }
+
+        /* VİDEO: Z-INDEX 1 (En Alt Katman, Siyah Arka Planın Üstü) */
+        .video-container {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: 1; 
+            overflow: hidden;
+            pointer-events: none; /* Tıklamaları engelle ki YouTube'a gitmesin */
+        }
+
+        .video-container iframe {
+            width: 100vw; 
+            height: 100vh; 
+            border: none;
+            /* iframe'in de hiçbir etkileşim almaması için: */
+            pointer-events: none;
+        }
+
+        /* KARANLIK FİLTRE: Z-INDEX 2 (Videonun üstüne hafif gölge sağlar) */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2; 
+        }
+
+        /* SCANLINE EFEKTİ: Z-INDEX 3 */
+        .scanline-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+            background-size: 100% 2px;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        /* İÇERİK: Z-INDEX 10 (En Üst Katman, Yazılar ve Butonlar) */
+        main {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 10; 
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            color: var(--primary);
+            text-shadow: 0 0 30px var(--glow);
+            margin-bottom: 25px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .staff-info {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--primary);
+            padding: 20px 50px;
+            box-shadow: 0 0 25px var(--glow);
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        .staff-info p {
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            margin: 5px 0;
+        }
+
+        .staff-info strong {
+            color: var(--primary);
+        }
+
+        .quote-text {
+            max-width: 800px;
+            font-size: 1.1rem;
+            color: #ccc;
+            border-left: 5px solid var(--primary);
+            padding-left: 20px;
+            margin-bottom: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+        }
+
+        .social-btn {
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
+            background: #5865F2;
+            padding: 15px 40px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(88, 101, 242, 0.5);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px #5865F2;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); text-shadow: 0 0 20px var(--glow); }
+            50% { transform: scale(1.02); text-shadow: 0 0 40px var(--primary); }
+            100% { transform: scale(1); text-shadow: 0 0 20px var(--glow); }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="scanline-effect"></div>
+
+    <!-- 
+      DİKKAT: İSTEDİĞİN YOUTUBE VİDEOSU "HATA 153" VERİYOR ÇÜNKÜ VİDEO YÜKLEYİCİSİ SİTELERDE PAYLAŞILMASINI (EMBED) KAPATMIŞ!
+      KESİN ÇÖZÜM (SANA ÖZEL MP4 SİSTEMİ):
+      O videoyu bir YouTube indirici siteden (örn: y2mate) .mp4 olarak indir.
+      Dosyanın adını "video.mp4" yapıp bu HTML dosyasıyla aynı klasöre (31 klasörüne) at.
+      Bu sayede video YouTube'un engellerine takılmayacak ve sonsuza kadar kusursuz oynayacak!
+    -->
+    <div class="video-container">
+      <video id="bg-video" autoplay="" muted="" loop="" playsinline="" style="width: 100vw; height: 100vh; object-fit: cover;">
+        <source src="video.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Karanlık Gölge Katmanı (Z-Index: 2) -->
+    <div class="overlay"></div>
+
+    <!-- Ana İçerik Katmanı (Z-Index: 10) -->
+    <main>
+        <h1>HACKED BY NİULA85 HAZRETLERİ</h1>
+
+        <div class="staff-info">
+            <p>KURUCU: <strong>Niula85</strong></p>
+            <p>ADMIN: <strong>Leux</strong></p>
+        </div>
+
+        <div class="quote-text">
+            "Türkler Gelir Bırakmaz Savaş Başlatırlar Bırakmazlar...<br>
+            Gökyüzü Çadırımız, Güneş Bayrağımız Olsun!"
+        </div>
+
+        <a href="https://discord.gg/zdP5fsqQ" target="_blank" class="social-btn">
+            DISCORD İLETİŞİM
+        </a>
+    </main>
+
+    <!-- SES AKTİVASYON SİSTEMİ (Tarayıcı Kurallarını Aşmak İçin) -->
+    <div id="click-to-play" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.85); cursor: pointer;">
+        <h2 style="color: var(--primary); text-shadow: 0 0 30px var(--glow); letter-spacing: 5px; font-size: 2rem; animation: pulse 1s infinite alternate;">[ SİSTEME GİRMEK VE SESİ AÇMAK İÇİN TIKLA ]</h2>
+    </div>
+
+    <script>
+        const clickScreen = document.getElementById('click-to-play');
+        const video = document.getElementById('bg-video');
+
+        // Ekrana tıklandığında sesi aç ve uyarıyı kaldır
+        clickScreen.addEventListener('click', () => {
+            if (video) {
+                video.muted = false; // Sesi açıyoruz!
+                video.play();        // Her ihtimale karşı oynatmayı zorluyoruz
+            }
+            clickScreen.style.opacity = '0'; // Ekranı yavaşça kaybet
+            setTimeout(() => { clickScreen.style.display = 'none'; }, 500); // Tamamen gizle
+        });
+
+        console.log("MAZARATHACKTEAM - System Locked By JAWEEDLENTERED.");
+    </script>
+</body>
+</html>

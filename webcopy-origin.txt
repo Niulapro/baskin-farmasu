@@ -1,0 +1,20 @@
+Uri: https://baba.jaweed.com.tr/
+File Name: C:\Downloaded Web Sites\baba.jaweed.com.tr\index.htm
+Content Type: text/html
+
+Uri: https://baba.jaweed.com.tr/video.mp4
+File Name: C:\Downloaded Web Sites\baba.jaweed.com.tr\video.mp4
+Content Type: video/mp4
+
+Uri: https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap
+File Name: C:\Downloaded Web Sites\baba.jaweed.com.tr\css2
+Content Type: text/css
+
+Uri: https://fonts.gstatic.com/s/orbitron/v35/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6xpg.ttf
+File Name: C:\Downloaded Web Sites\baba.jaweed.com.tr\s\orbitron\v35\yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6xpg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/orbitron/v35/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1ny_Cmxpg.ttf
+File Name: C:\Downloaded Web Sites\baba.jaweed.com.tr\s\orbitron\v35\yMJMMIlzdpvBhQQL_SC3X9yhF25-T1ny_Cmxpg.ttf
+Content Type: font/ttf
+
