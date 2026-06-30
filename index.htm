@@ -19,9 +19,7 @@
         }
 
         /* 
-           KRİTİK DÜZELTME:
-           body'deki siyah arka planı alta aldık. 
-           Videoyu ve yazıları "z-index" ile sıralayacağız ki video kaybolmasın.
+           K
         */
         body, html {
             height: 100%;
@@ -156,14 +154,7 @@
 </head>
 <body>
     <div class="scanline-effect"></div>
-
-    <!-- 
-      DİKKAT: İSTEDİĞİN YOUTUBE VİDEOSU "HATA 153" VERİYOR ÇÜNKÜ VİDEO YÜKLEYİCİSİ SİTELERDE PAYLAŞILMASINI (EMBED) KAPATMIŞ!
-      KESİN ÇÖZÜM (SANA ÖZEL MP4 SİSTEMİ):
-      O videoyu bir YouTube indirici siteden (örn: y2mate) .mp4 olarak indir.
-      Dosyanın adını "video.mp4" yapıp bu HTML dosyasıyla aynı klasöre (31 klasörüne) at.
-      Bu sayede video YouTube'un engellerine takılmayacak ve sonsuza kadar kusursuz oynayacak!
-    -->
+    
     <div class="video-container">
       <video id="bg-video" autoplay="" muted="" loop="" playsinline="" style="width: 100vw; height: 100vh; object-fit: cover;">
         <source src="video.mp4" type="video/mp4">
@@ -192,7 +183,6 @@
         </a>
     </main>
 
-    <!-- SES AKTİVASYON SİSTEMİ (Tarayıcı Kurallarını Aşmak İçin) -->
     <div id="click-to-play" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.85); cursor: pointer;">
         <h2 style="color: var(--primary); text-shadow: 0 0 30px var(--glow); letter-spacing: 5px; font-size: 2rem; animation: pulse 1s infinite alternate;">[ SİSTEME GİRMEK VE SESİ AÇMAK İÇİN TIKLA ]</h2>
     </div>
@@ -201,17 +191,16 @@
         const clickScreen = document.getElementById('click-to-play');
         const video = document.getElementById('bg-video');
 
-        // Ekrana tıklandığında sesi aç ve uyarıyı kaldır
         clickScreen.addEventListener('click', () => {
             if (video) {
-                video.muted = false; // Sesi açıyoruz!
-                video.play();        // Her ihtimale karşı oynatmayı zorluyoruz
+                video.muted = false; 
+                video.play();       
             }
             clickScreen.style.opacity = '0'; // Ekranı yavaşça kaybet
-            setTimeout(() => { clickScreen.style.display = 'none'; }, 500); // Tamamen gizle
+            setTimeout(() => { clickScreen.style.display = 'none'; }, 500);
         });
 
-        console.log("MAZARATHACKTEAM - System Locked By JAWEEDLENTERED.");
+        console.log("404leak - System Locked By Niula85.");
     </script>
 </body>
 </html>
